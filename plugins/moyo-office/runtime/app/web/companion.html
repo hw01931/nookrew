@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{name}} · {{projectName}}</title>
+    <link rel="stylesheet" href="/companion.css" />
+    <script type="module" src="/companion.js"></script>
+  </head>
+  <body class="office-only office-companion">
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <main id="main">
+      <div id="office"><div id="office-content" role="status"></div></div>
+    </main>
+    <dialog id="office-viewer">
+      <header class="dialog-top">
+        <h2 id="office-viewer-title"></h2>
+        <button type="button" data-companion-close aria-label="닫기" data-i18n-label="common.close">×</button>
+      </header>
+      <div id="office-viewer-content"></div>
+    </dialog>
+    <aside id="notice" role="status" hidden>
+      <span id="notice-text"></span><button id="undo" hidden></button
+      ><button data-notice-close aria-label="닫기" data-i18n-label="common.close">×</button>
+    </aside>
+  </body>
+</html>

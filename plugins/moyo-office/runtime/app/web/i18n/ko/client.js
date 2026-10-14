@@ -1,0 +1,23 @@
+/** Korean text of the customer review page (ADR 0061). */
+export default {
+  'client.title': '고객 검토 공간',
+  'client.checking': '확인 중…',
+  'client.heading': '공유 항목',
+  'client.intro': '공유받은 산출물과 대화방입니다.',
+  'client.feedback': '의견',
+  'client.kind': '종류',
+  'client.verdict.COMMENT': '의견만',
+  'client.verdict.ACCEPT': '수용',
+  'client.verdict.CHANGES': '수정 요청',
+  'client.sendFeedback': '의견 보내기',
+  'client.message': '메시지',
+  'client.sendMessage': '메시지 보내기',
+  'client.empty': '공유된 항목이 없습니다.',
+  'client.denied': '접근 권한 없음',
+  'client.loadFailed': '불러오지 못함',
+  'client.cannotOpen': '공유 내용을 열 수 없습니다',
+  'client.deniedHelp': '링크가 올바르지 않거나 만료됐습니다. 담당자에게 확인하세요.',
+  'client.failedHelp': '연결과 링크를 확인하고 다시 시도하세요.',
+  'client.sent': '보냈습니다.',
+  'client.sendFailed': '보내지 못했습니다. 다시 시도하세요. 오류: {reason}',
+};

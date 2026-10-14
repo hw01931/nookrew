@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "include": [
+    "src/**",
+    "tests/**",
+    "web/**",
+    "package.json",
+    "package-lock.json",
+    "tsconfig.json",
+    "config/product.json",
+    "config/collaboration.json"
+  ],
+  "exclude": []
+}

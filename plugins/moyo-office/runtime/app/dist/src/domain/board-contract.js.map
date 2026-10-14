@@ -1,0 +1,1 @@
+{"version":3,"file":"board-contract.js","sourceRoot":"","sources":["../../../src/domain/board-contract.ts"],"names":[],"mappings":";;;AAAA,6CAAqD;AAErD,kFAAkF;AACrE,QAAA,aAAa,GAAG,CAAC,SAAS,EAAE,QAAQ,EAAE,QAAQ,EAAE,MAAM,CAAU,CAAC;AACjE,QAAA,WAAW,GAAG,MAAM,CAAC,MAAM,CAAC;IACvC,eAAe,EAAE,GAAG;IACpB,cAAc,EAAE,IAAI;IACpB,cAAc,EAAE,GAAG;IACnB,wBAAwB,EAAE,oCAAuB;CAClD,CAAC,CAAC"}

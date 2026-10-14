@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "tasks": {
+    "cache-expiry": {"function": "fresh", "argument_types": ["number", "number"], "expected_type": "boolean", "comparison": "strict_json", "exceptions": []},
+    "pagination": {"function": "page", "argument_types": ["array", "integer", "integer"], "expected_type": "array", "comparison": "strict_json", "exceptions": ["ValueError"]},
+    "decimal-total": {"function": "total", "argument_types": ["string", "integer"], "expected_type": "string", "comparison": "strict_json", "exceptions": ["ValueError"]},
+    "query-update": {"function": "set_page", "argument_types": ["string", "integer"], "expected_type": "string", "comparison": "url_query_pairs", "exceptions": []}
+  }
+}

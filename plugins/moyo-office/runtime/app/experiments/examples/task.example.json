@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.1",
+  "task_id": "T013",
+  "revision": 1,
+  "repository": {
+    "reference": "fixture:signup-validation",
+    "base_snapshot": "fixture-v1"
+  },
+  "goal": "빈 표시 이름으로 가입하면 명확한 입력 오류를 반환하도록 수정한다.",
+  "delivery": "patch",
+  "constraints": [
+    "기존 로그인 동작과 공개 함수 서명을 유지한다.",
+    "필수 검증 파일을 삭제하거나 검증 조건을 약화하지 않는다."
+  ],
+  "allowed_scope": [
+    "src/signup/**",
+    "tests/signup/**"
+  ],
+  "forbidden_scope": [
+    "src/login/**",
+    "tests/login/**"
+  ],
+  "references": [
+    "requirement:signup-display-name"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "description": "공백만 있는 표시 이름을 거부한다."
+    },
+    {
+      "id": "AC2",
+      "description": "유효한 가입과 기존 로그인 동작을 유지한다."
+    },
+    {
+      "id": "AC3",
+      "description": "허용 범위 밖 변경이 없다."
+    }
+  ],
+  "verification": [
+    {
+      "check_id": "signup-input",
+      "required": true,
+      "criterion_ids": [
+        "AC1",
+        "AC2"
+      ],
+      "kind": "test",
+      "timeout_seconds": 120
+    },
+    {
+      "check_id": "login-regression",
+      "required": true,
+      "criterion_ids": [
+        "AC2"
+      ],
+      "kind": "test",
+      "timeout_seconds": 120
+    },
+    {
+      "check_id": "scope-policy",
+      "required": true,
+      "criterion_ids": [
+        "AC3"
+      ],
+      "kind": "scope",
+      "timeout_seconds": 30
+    }
+  ],
+  "risk": "low",
+  "limits": {
+    "max_attempts": 2,
+    "wall_time_seconds": 600,
+    "max_tool_calls": 40,
+    "max_context_tokens": 16000
+  },
+  "tags": [
+    "bug_fix",
+    "local_change"
+  ]
+}

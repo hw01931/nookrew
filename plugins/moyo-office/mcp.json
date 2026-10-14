@@ -1,0 +1,4 @@
+{
+ "$schema":"https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+ "mcpServers":{"moyo-office":{"type":"stdio","command":"${PLUGIN_ROOT}/runtime/AIOrchestraOffice.exe","args":["--mcp"],"cwd":"${PLUGIN_ROOT}"}}
+}

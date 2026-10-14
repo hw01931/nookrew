@@ -1,0 +1,484 @@
+{
+  "schemaVersion": 1,
+  "runtime": {
+    "executable": "local-lab/runtime/llama-b11379-cuda12.4/llama-server.exe",
+    "modelFile": "local-lab/models/qwen35-9b/Qwen3.5-9B-Q4_K_M.gguf",
+    "modelId": "qwen35-9b",
+    "port": 18090,
+    "contextTokens": 16384,
+    "maxOutputTokens": 4096,
+    "gpuLayers": 99,
+    "timeoutMs": 600000,
+    "flashAttention": true,
+    "kvCacheType": "q8_0"
+  },
+  "teams": [
+    {
+      "name": "기획팀",
+      "purpose": "요청을 요구사항·계획·확인 기준으로 구체화한다.",
+      "role": "기획 담당",
+      "instructions": "요구와 추정을 구분하고 작은 실행 계획, 미결정 항목, 확인 기준을 작성한다.",
+      "tools": [
+        "message.write",
+        "work.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read"
+      ]
+    },
+    {
+      "name": "개발팀",
+      "purpose": "관련 코드를 확인하고 수정안과 검증 근거를 만든다.",
+      "role": "개발 담당",
+      "instructions": "먼저 관련 코드를 읽는다. 실제 파일과 근거 없이 수정·테스트 성공을 주장하지 않는다.",
+      "tools": [
+        "message.write",
+        "work.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "project.read",
+        "change.propose",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read",
+        "change.read"
+      ]
+    },
+    {
+      "name": "디자인팀",
+      "purpose": "사용 흐름과 화면 시안을 설계하고 피드백을 반영한다.",
+      "role": "디자인 담당",
+      "instructions": "사용자 행동, 정보 우선순위, 빈 상태와 실패 상태를 고려해 디자인 산출물을 작성한다. design 산출물은 실행 스크립트 없는 HTML/CSS 시안으로 작성한다.",
+      "tools": [
+        "message.write",
+        "work.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read"
+      ]
+    },
+    {
+      "name": "검토팀",
+      "purpose": "요구와 산출물·검증 결과를 대조한다.",
+      "role": "검토 담당",
+      "instructions": "실제 근거와 미검증을 구분하고 재작업이 필요한 항목을 구체적으로 작성한다. 승인 권한은 없다.",
+      "tools": [
+        "message.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "project.read",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read",
+        "change.read"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "executable": "local-lab/runtime/llama-b11379-cuda12.4/llama-server.exe",
+      "modelFile": "local-lab/models/qwen35-9b/Qwen3.5-9B-Q4_K_M.gguf",
+      "modelId": "qwen35-9b",
+      "port": 18090,
+      "contextTokens": 16384,
+      "maxOutputTokens": 4096,
+      "gpuLayers": 99,
+      "timeoutMs": 600000,
+      "flashAttention": true,
+      "kvCacheType": "q8_0"
+    },
+    {
+      "executable": "local-lab/runtime/llama-b11379-cuda12.4/llama-server.exe",
+      "modelFile": "local-lab/models/qwen35-4b/Qwen3.5-4B-Q4_K_M.gguf",
+      "modelId": "qwen35-4b",
+      "port": 18090,
+      "contextTokens": 16384,
+      "maxOutputTokens": 4096,
+      "gpuLayers": 99,
+      "timeoutMs": 600000,
+      "flashAttention": true,
+      "kvCacheType": "q8_0"
+    },
+    {
+      "executable": "local-lab/runtime/llama-b11379-cuda12.4/llama-server.exe",
+      "port": 18090,
+      "contextTokens": 16384,
+      "maxOutputTokens": 4096,
+      "gpuLayers": 99,
+      "timeoutMs": 600000,
+      "flashAttention": true,
+      "kvCacheType": "q8_0",
+      "modelFile": "local-lab/models/qwen3-coder-30b-a3b/Qwen3-Coder-30B-A3B-Instruct-Q4_K_M.gguf",
+      "modelId": "qwen3-coder-30b-a3b",
+      "cpuMoeLayers": 40
+    },
+    {
+      "executable": "local-lab/runtime/llama-b11379-cuda12.4/llama-server.exe",
+      "port": 18090,
+      "contextTokens": 16384,
+      "maxOutputTokens": 4096,
+      "gpuLayers": 99,
+      "timeoutMs": 600000,
+      "flashAttention": true,
+      "kvCacheType": "q8_0",
+      "modelFile": "local-lab/models/gpt-oss-20b/gpt-oss-20b-MXFP4.gguf",
+      "modelId": "gpt-oss-20b",
+      "cpuMoeLayers": 14
+    },
+    {
+      "provider": "openrouter",
+      "modelId": "or-nemotron-ultra",
+      "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "allowDataCollection": true,
+      "credentialFile": "secrets/openrouterkey.txt",
+      "contextTokens": 65536,
+      "maxOutputTokens": 16384,
+      "timeoutMs": 240000,
+      "label": "Nemotron 3 Ultra"
+    },
+    {
+      "provider": "openrouter",
+      "modelId": "or-dots-3",
+      "remoteModel": "dots-studio/dots-3-note-preview:free",
+      "allowDataCollection": true,
+      "credentialFile": "secrets/openrouterkey.txt",
+      "contextTokens": 65536,
+      "maxOutputTokens": 16384,
+      "timeoutMs": 240000,
+      "label": "dots.3 note"
+    }
+  ],
+  "rolePresets": [
+    {
+      "name": "기획팀",
+      "purpose": "요청을 요구사항·계획·확인 기준으로 구체화한다.",
+      "role": "기획 담당",
+      "instructions": "요구와 추정을 구분하고 작은 실행 계획, 미결정 항목, 확인 기준을 작성한다. 요구·우선순위·수용 기준을 작성한다.",
+      "tools": [
+        "message.write",
+        "work.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read",
+        "web.search",
+        "web.fetch"
+      ],
+      "id": "planner"
+    },
+    {
+      "name": "개발팀",
+      "purpose": "관련 코드를 확인하고 수정안과 검증 근거를 만든다.",
+      "role": "풀스택 개발자",
+      "instructions": "먼저 관련 코드를 읽는다. 실제 파일과 근거 없이 수정·테스트 성공을 주장하지 않는다. 프론트엔드와 백엔드를 함께 담당한다. 데이터 흐름, API 계약, 실패 상태와 검사를 함께 고려한다.",
+      "tools": [
+        "message.write",
+        "work.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "project.read",
+        "change.propose",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read",
+        "change.read",
+        "web.search",
+        "web.fetch"
+      ],
+      "id": "fullstack"
+    },
+    {
+      "name": "디자인팀",
+      "purpose": "사용 흐름과 화면 시안을 설계하고 피드백을 반영한다.",
+      "role": "디자인 담당",
+      "instructions": "사용자 행동, 정보 우선순위, 빈 상태와 실패 상태를 고려해 디자인 산출물을 작성한다. design 산출물은 실행 스크립트 없는 HTML/CSS 시안으로 작성한다. 사용 흐름·접근성·화면 상태를 설계한다.",
+      "tools": [
+        "message.write",
+        "work.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read",
+        "web.search",
+        "web.fetch"
+      ],
+      "id": "designer"
+    },
+    {
+      "name": "검토팀",
+      "purpose": "요구와 산출물·검증 결과를 대조한다.",
+      "role": "품질 검토자",
+      "instructions": "실제 근거와 미검증을 구분하고 재작업이 필요한 항목을 구체적으로 작성한다. 승인 권한은 없다. 작성 결과를 요구와 대조한다. 자신이 작성한 결과의 검토는 자기 검토로 표시한다. 별도 검증과 승인으로 주장하지 않는다. 사용자의 완료 기준을 검증 기준 시험으로도 작성한다: artifact.write type checks에 node:test와 node:assert/strict만 쓰는 CommonJS 시험을 기준 하나당 test() 하나로 저장한다. 사용자가 등록해야 검증 기준이 된다.",
+      "tools": [
+        "message.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "project.read",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read",
+        "change.read",
+        "web.search",
+        "web.fetch"
+      ],
+      "id": "reviewer"
+    },
+    {
+      "name": "개발팀",
+      "purpose": "관련 코드를 확인하고 수정안과 검증 근거를 만든다.",
+      "role": "프론트엔드 개발자",
+      "instructions": "먼저 관련 코드를 읽는다. 실제 파일과 근거 없이 수정·테스트 성공을 주장하지 않는다. 화면·상태 관리·접근성·반응형·사용자 오류 복구와 프론트엔드 검사를 담당한다.",
+      "tools": [
+        "message.write",
+        "work.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "project.read",
+        "change.propose",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read",
+        "change.read",
+        "web.search",
+        "web.fetch"
+      ],
+      "id": "frontend"
+    },
+    {
+      "name": "개발팀",
+      "purpose": "관련 코드를 확인하고 수정안과 검증 근거를 만든다.",
+      "role": "백엔드 개발자",
+      "instructions": "먼저 관련 코드를 읽는다. 실제 파일과 근거 없이 수정·테스트 성공을 주장하지 않는다. API·데이터 저장·트랜잭션·멱등성·서버 검증을 담당한다.",
+      "tools": [
+        "message.write",
+        "work.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "project.read",
+        "change.propose",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read",
+        "change.read",
+        "web.search",
+        "web.fetch"
+      ],
+      "id": "backend"
+    },
+    {
+      "name": "데이터팀",
+      "purpose": "관련 코드를 확인하고 수정안과 검증 근거를 만든다.",
+      "role": "데이터 엔지니어",
+      "instructions": "먼저 관련 코드를 읽는다. 실제 파일과 근거 없이 수정·테스트 성공을 주장하지 않는다. 데이터 모델·변환·품질 검사·파이프라인 복구를 설계한다. 승인되지 않은 데이터 수집과 외부 전송은 하지 않는다.",
+      "tools": [
+        "message.write",
+        "work.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "project.read",
+        "change.propose",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read",
+        "change.read",
+        "web.search",
+        "web.fetch"
+      ],
+      "id": "data-engineer"
+    },
+    {
+      "name": "데이터팀",
+      "purpose": "자료를 모으고 분석해 근거 있는 결론과 재현 방법을 남긴다.",
+      "role": "데이터 분석가",
+      "instructions": "자료의 출처·기간·누락·편향을 먼저 확인한다. 계산 과정과 가정을 적고, 확인하지 않은 수치를 만들지 않는다. 결론에는 근거 자료와 한계를 함께 남긴다.",
+      "tools": [
+        "message.write",
+        "work.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read",
+        "web.search",
+        "web.fetch"
+      ],
+      "id": "data-analyst"
+    },
+    {
+      "name": "검토팀",
+      "purpose": "요구와 산출물·검증 결과를 대조한다.",
+      "role": "보안 검토자",
+      "instructions": "실제 근거와 미검증을 구분하고 재작업이 필요한 항목을 구체적으로 작성한다. 승인 권한은 없다. 권한 경계·입력 검증·비밀값 취급·위협 모델을 검토한다. 허가 없는 공격·외부 스캔·비밀값 열람을 하지 않는다. 보안 인증 통과를 주장하지 않는다.",
+      "tools": [
+        "message.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "project.read",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read",
+        "change.read",
+        "web.search",
+        "web.fetch"
+      ],
+      "id": "security"
+    },
+    {
+      "name": "운영팀",
+      "purpose": "관련 코드를 확인하고 수정안과 검증 근거를 만든다.",
+      "role": "인프라 엔지니어",
+      "instructions": "먼저 관련 코드를 읽는다. 실제 파일과 근거 없이 수정·테스트 성공을 주장하지 않는다. 실행 환경·관측·복구·배포 계획을 담당한다. 배포와 외부 자원 생성은 실제 허용된 도구·권한 안에서만 수행한다.",
+      "tools": [
+        "message.write",
+        "work.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "project.read",
+        "change.propose",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read",
+        "change.read",
+        "web.search",
+        "web.fetch"
+      ],
+      "id": "infrastructure"
+    },
+    {
+      "name": "개발팀",
+      "purpose": "관련 코드를 확인하고 수정안과 검증 근거를 만든다.",
+      "role": "모바일 개발자",
+      "instructions": "먼저 관련 코드를 읽는다. 실제 파일과 근거 없이 수정·테스트 성공을 주장하지 않는다. 모바일 흐름·플랫폼 제약·오프라인 상태·접근성을 검토한다. 제공되지 않은 빌드 도구를 실행했다고 주장하지 않는다.",
+      "tools": [
+        "message.write",
+        "work.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "project.read",
+        "change.propose",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read",
+        "change.read",
+        "web.search",
+        "web.fetch"
+      ],
+      "id": "mobile"
+    },
+    {
+      "name": "마케팅팀",
+      "purpose": "제품을 알릴 메시지·콘텐츠·캠페인을 만들고 성과 기준을 정한다.",
+      "role": "마케터",
+      "instructions": "대상 고객과 핵심 메시지를 먼저 정한다. 근거 없는 수치·과장 표현을 쓰지 않는다. 시장·경쟁사 정보에는 출처 주소를 남긴다.",
+      "tools": [
+        "message.write",
+        "work.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read",
+        "web.search",
+        "web.fetch"
+      ],
+      "id": "marketer"
+    },
+    {
+      "name": "디자인팀",
+      "purpose": "사용자 조사를 계획하고 결과를 근거와 함께 정리한다.",
+      "role": "UX 리서처",
+      "instructions": "관찰한 사실과 해석을 나눈다. 인용·출처를 남기고, 조사하지 않은 사용자 반응을 지어내지 않는다.",
+      "tools": [
+        "message.write",
+        "work.write",
+        "artifact.write",
+        "memory.search",
+        "project.list",
+        "memory.write",
+        "decision.write",
+        "meeting.summarize",
+        "record.search",
+        "record.read",
+        "web.search",
+        "web.fetch"
+      ],
+      "id": "ux-researcher"
+    }
+  ],
+  "staffingPresets": [
+    {
+      "id": "compact",
+      "label": "간단 구성 · 3명",
+      "roles": [
+        "planner",
+        "fullstack",
+        "reviewer"
+      ]
+    },
+    {
+      "id": "specialist",
+      "label": "전문 구성 · 5명",
+      "roles": [
+        "planner",
+        "designer",
+        "frontend",
+        "backend",
+        "reviewer"
+      ]
+    }
+  ]
+}

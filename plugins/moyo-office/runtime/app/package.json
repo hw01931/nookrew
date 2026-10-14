@@ -1,0 +1,55 @@
+{
+  "name": "aiorchestra",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Evidence-driven AI work orchestration experiment harness",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.15.1 <23"
+  },
+  "packageManager": "npm@10.9.2",
+  "scripts": {
+    "build": "npm run build:editor && tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test --test-concurrency=4 dist/tests/*.test.js",
+    "cli": "node dist/src/cli/main.js",
+    "demo": "npm run build && node dist/src/cli/main.js run experiments/examples/task.example.json",
+    "dev": "npm run build && node scripts/office-companion.cjs",
+    "check": "npm run typecheck && npm run format:check && npm test && npm run test:browser",
+    "build:editor": "node scripts/build-editor.cjs",
+    "format": "prettier --write src tests web scripts/*.cjs scripts/verifier/*.cjs",
+    "format:check": "prettier --check src tests web scripts/*.cjs scripts/verifier/*.cjs",
+    "test:browser": "node --test --test-concurrency=1 dist/tests/browser/*.test.js",
+    "doctor": "node scripts/doctor.cjs",
+    "package": "node scripts/package/build.cjs",
+    "office": "node scripts/office-companion.cjs",
+    "office:setup": "npm ci && npm run build",
+    "package:office": "node scripts/package/build-office.cjs"
+  },
+  "dependencies": {
+    "@codemirror/commands": "6.11.1",
+    "@codemirror/lang-css": "6.3.1",
+    "@codemirror/lang-html": "6.4.12",
+    "@codemirror/lang-javascript": "6.2.5",
+    "@codemirror/lang-json": "6.0.2",
+    "@codemirror/search": "6.7.2",
+    "@codemirror/state": "6.7.6",
+    "@codemirror/view": "6.43.13",
+    "@univerjs/preset-sheets-core": "1.0.3",
+    "@univerjs/presets": "1.0.3",
+    "ajv": "8.20.0",
+    "codemirror": "6.0.2",
+    "markdown-it": "15.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.3",
+    "esbuild": "0.28.2",
+    "happy-dom": "20.14.5",
+    "innosetup-compiler": "6.3.1",
+    "mermaid": "11.17.2",
+    "playwright-core": "1.63.0",
+    "postject": "1.0.0-alpha.6",
+    "prettier": "3.9.9",
+    "typescript": "5.8.3"
+  }
+}

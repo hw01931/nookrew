@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "display": {
+    "name": "Nookrew",
+    "projectName": null,
+    "monogram": "N",
+    "taskPrefix": "AO",
+    "workspaceTitle": "작업실",
+    "previewVersion": "0.4"
+  },
+  "regional": {
+    "locale": "ko-KR",
+    "timeZone": "Asia/Seoul"
+  },
+  "client": {
+    "pollIntervalMs": 4000,
+    "requestTimeoutMs": 15000,
+    "toastDurationMs": 6500,
+    "staleWorkDays": 3
+  },
+  "server": {
+    "port": 4317
+  },
+  "retainedModelLabel": "Qwen3.5 9B · 보존됨 / 실행 미연결"
+}

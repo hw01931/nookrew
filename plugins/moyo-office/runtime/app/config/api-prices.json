@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-07",
+  "note": "USD per 1M tokens (standard tier, short context). perSearch is USD per built-in web search call. Read from the providers' official pricing pages on the date above; confirm before relying on them. Long-context surcharges are not included.",
+  "sources": {
+    "openai": "https://developers.openai.com/api/docs/pricing",
+    "anthropic": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "google": "https://ai.google.dev/gemini-api/docs/pricing",
+    "xai": "https://docs.x.ai/docs/pricing"
+  },
+  "models": {
+    "openai:gpt-6-astra": {"label": "GPT-6 Astra", "input": 10, "cachedInput": 1, "output": 50, "perSearch": 0.01, "contextTokens": 1050000},
+    "openai:gpt-6.1-sol": {"label": "GPT-6.1 Sol", "input": 2, "cachedInput": 0.1, "output": 10, "perSearch": 0.01, "contextTokens": 1050000},
+    "openai:gpt-6-luna": {"label": "GPT-6 Luna", "input": 0.1, "cachedInput": 0.01, "output": 0.5, "perSearch": 0.01, "contextTokens": 1050000},
+    "anthropic:claude-fable-5-1": {"label": "Claude Fable 5.1", "input": 10, "cachedInput": 0.25, "output": 50, "perSearch": 0.01, "contextTokens": 1000000},
+    "anthropic:claude-opus-5-5": {"label": "Claude Opus 5.5", "input": 4, "cachedInput": 0.2, "output": 20, "perSearch": 0.01, "contextTokens": 1000000},
+    "anthropic:claude-sonnet-5-5": {"label": "Claude Sonnet 5.5", "input": 2, "cachedInput": 0.2, "output": 10, "perSearch": 0.01, "contextTokens": 1000000},
+    "anthropic:claude-haiku-4-5": {"label": "Claude Haiku 4.5", "input": 1, "cachedInput": 0.1, "output": 5, "perSearch": 0.01, "contextTokens": 200000},
+    "google:gemini-3.8-flash": {"label": "Gemini 3.8 Flash", "input": 0.75, "cachedInput": 0.075, "output": 3.75, "perSearch": 0.014, "contextTokens": 1000000, "note": "할인가 2026-12-31까지, 이후 1.50/7.50"},
+    "google:gemini-3.1-pro-preview": {"label": "Gemini 3.1 Pro (preview)", "input": 2, "output": 12, "perSearch": 0.014, "contextTokens": 1000000},
+    "google:gemini-3.1-flash-lite": {"label": "Gemini 3.1 Flash-Lite", "input": 0.25, "output": 1.5, "perSearch": 0.014, "contextTokens": 1000000},
+    "xai:grok-4.7": {"label": "Grok 4.7", "input": 2, "cachedInput": 0.5, "output": 6, "perSearch": 0.005, "contextTokens": 500000},
+    "xai:grok-4.3": {"label": "Grok 4.3", "input": 1.25, "cachedInput": 0.2, "output": 2.5, "perSearch": 0.005, "contextTokens": 1000000}
+  }
+}

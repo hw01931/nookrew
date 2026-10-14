@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "status": "UNFROZEN",
+  "purpose": "파일럿 후 본 평가 시작 전에 수치와 방향을 고정한다. null이면 승격 판정 금지.",
+  "frozen_at": null,
+  "pilot_manifest_hash": null,
+  "holdout_manifest_hash": null,
+  "primary_comparison": "orchestrator_vs_cheap_single_api",
+  "decision_unit": "task_family",
+  "thresholds": {
+    "quality_noninferiority_margin_percentage_points": null,
+    "min_relative_cost_reduction": null,
+    "min_relative_time_reduction": null,
+    "max_human_intervention_increase": null,
+    "max_critical_policy_violations": 0,
+    "min_distinct_tasks_per_family": null,
+    "min_supported_cell_coverage": null,
+    "confidence_level": null
+  },
+  "rule": "Quality and safety gates must pass before efficiency-based promotion. Uncertain results require REVISE; subgroup-only benefit permits OPTIONAL.",
+  "notes": [
+    "원문 30% 비용 감소는 예시이며 확정 기준이 아니다.",
+    "최소 하나의 사전 선택된 효율 지표 개선을 요구하고 다른 지표의 허용 열화 상한도 freeze 시 명시한다.",
+    "실패·재시도·planning·context·verification 비용을 모두 포함한다."
+  ]
+}

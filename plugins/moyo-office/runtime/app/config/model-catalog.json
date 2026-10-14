@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "runtimes": [
+    {
+      "id": "llama-b11379-cuda12.4",
+      "label": "llama.cpp b11379 · NVIDIA GPU (CUDA 12.4)",
+      "description": "NVIDIA 그래픽카드용",
+      "dir": "local-lab/runtime/llama-b11379-cuda12.4",
+      "executable": "llama-server.exe",
+      "license": "MIT",
+      "archives": [
+        {
+          "url": "https://github.com/ggml-org/llama.cpp/releases/download/b11379/llama-b11379-bin-win-cuda-12.4-x64.zip",
+          "sha256": "b4f0870dad35f3c2065a3dcf44f6c0c8121cc3658bb951d8505203d8e0c1ab15"
+        },
+        {
+          "url": "https://github.com/ggml-org/llama.cpp/releases/download/b11379/cudart-llama-bin-win-cuda-12.4-x64.zip",
+          "sha256": "8c79a9b226de4b3cacfd1f83d24f962d0773be79f1e7b75c6af4ded7e32ae1d6"
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "id": "qwen35-9b",
+      "label": "Qwen3.5 9B (Q4_K_M)",
+      "description": "Alibaba. 기본 모델, 8GB에서 확인함",
+      "file": "local-lab/models/qwen35-9b/Qwen3.5-9B-Q4_K_M.gguf",
+      "url": "https://huggingface.co/unsloth/Qwen3.5-9B-GGUF/resolve/3885219b6810b007914f3a7950a8d1b469d598a5/Qwen3.5-9B-Q4_K_M.gguf?download=true",
+      "bytes": 5680522464,
+      "sha256": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+      "license": "apache-2.0",
+      "vramGb": 8,
+      "runtime": "llama-b11379-cuda12.4",
+      "checked": true
+    },
+    {
+      "id": "qwen35-4b",
+      "label": "Qwen3.5 4B (Q4_K_M)",
+      "description": "Alibaba. 작은 그래픽카드용",
+      "file": "local-lab/models/qwen35-4b/Qwen3.5-4B-Q4_K_M.gguf",
+      "url": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF/resolve/e87f176479d0855a907a41277aca2f8ee7a09523/Qwen3.5-4B-Q4_K_M.gguf?download=true",
+      "bytes": 2740937888,
+      "sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+      "license": "apache-2.0",
+      "vramGb": 4,
+      "runtime": "llama-b11379-cuda12.4",
+      "checked": true
+    },
+    {
+      "id": "qwen3-coder-30b-a3b",
+      "label": "Qwen3-Coder 30B-A3B (Q4_K_M, MoE)",
+      "description": "Alibaba. 코딩 특화 MoE, RAM 32GB 필요",
+      "file": "local-lab/models/qwen3-coder-30b-a3b/Qwen3-Coder-30B-A3B-Instruct-Q4_K_M.gguf",
+      "url": "https://huggingface.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF/resolve/b17cb02dd882d5b6ab62fc777ad2995f19668350/Qwen3-Coder-30B-A3B-Instruct-Q4_K_M.gguf?download=true",
+      "bytes": 18556689568,
+      "sha256": "fadc3e5f8d42bf7e894a785b05082e47daee4df26680389817e2093056f088ad",
+      "license": "apache-2.0",
+      "vramGb": 8,
+      "ramGb": 32,
+      "runtime": "llama-b11379-cuda12.4",
+      "checked": false
+    },
+    {
+      "id": "gpt-oss-20b",
+      "label": "gpt-oss-20b (MXFP4, MoE)",
+      "description": "OpenAI. MoE, RAM 24GB 이상 필요",
+      "file": "local-lab/models/gpt-oss-20b/gpt-oss-20b-MXFP4.gguf",
+      "url": "https://huggingface.co/ggml-org/gpt-oss-20b-GGUF/resolve/ef9b12f2ff56c69cf32153a02784e7a3c88bf524/gpt-oss-20b-MXFP4.gguf?download=true",
+      "bytes": 12109566624,
+      "sha256": "27cd6c432c7672cb812a92f611cf3ba7bbc35928262bb1e1253ff4ee6ae35901",
+      "license": "apache-2.0",
+      "vramGb": 8,
+      "ramGb": 24,
+      "runtime": "llama-b11379-cuda12.4",
+      "checked": false
+    },
+    {
+      "id": "llama31-8b",
+      "label": "Llama 3.1 8B Instruct (Q4_K_M)",
+      "description": "Meta. 범용 대화·지시 수행",
+      "file": "local-lab/models/llama31-8b/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "url": "https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/bf5b95e96dac0462e2a09145ec66cae9a3f12067/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf?download=true",
+      "bytes": 4920739232,
+      "sha256": "7b064f5842bf9532c91456deda288a1b672397a54fa729aa665952863033557c",
+      "license": "llama3.1",
+      "vramGb": 8,
+      "runtime": "llama-b11379-cuda12.4",
+      "checked": false
+    },
+    {
+      "id": "mistral-7b-v03",
+      "label": "Mistral 7B Instruct v0.3 (Q4_K_M)",
+      "description": "Mistral AI. 가볍고 빠른 범용 모델",
+      "file": "local-lab/models/mistral-7b-v03/Mistral-7B-Instruct-v0.3-Q4_K_M.gguf",
+      "url": "https://huggingface.co/bartowski/Mistral-7B-Instruct-v0.3-GGUF/resolve/61fd4167fff3ab01ee1cfe0da183fa27a944db48/Mistral-7B-Instruct-v0.3-Q4_K_M.gguf?download=true",
+      "bytes": 4372812000,
+      "sha256": "1270d22c0fbb3d092fb725d4d96c457b7b687a5f5a715abe1e818da303e562b6",
+      "license": "apache-2.0",
+      "vramGb": 6,
+      "runtime": "llama-b11379-cuda12.4",
+      "checked": false
+    },
+    {
+      "id": "granite33-8b",
+      "label": "Granite 3.3 8B Instruct (Q4_K_M)",
+      "description": "IBM. 업무 문서·도구 호출용",
+      "file": "local-lab/models/granite33-8b/ibm-granite_granite-3.3-8b-instruct-Q4_K_M.gguf",
+      "url": "https://huggingface.co/bartowski/ibm-granite_granite-3.3-8b-instruct-GGUF/resolve/000bcc0448c24671ca97c24b2daa6dd693abc625/ibm-granite_granite-3.3-8b-instruct-Q4_K_M.gguf?download=true",
+      "bytes": 4942873632,
+      "sha256": "758fb00abcec89df5cf02932165daf72f0d0b74db5019dbe9f2b3defb1e9295e",
+      "license": "apache-2.0",
+      "vramGb": 8,
+      "runtime": "llama-b11379-cuda12.4",
+      "checked": false
+    },
+    {
+      "id": "gemma3-12b",
+      "label": "Gemma 3 12B (Q4_K_M)",
+      "description": "Google. 8GB에서는 문맥을 줄여야 할 수 있음",
+      "file": "local-lab/models/gemma3-12b/google_gemma-3-12b-it-Q4_K_M.gguf",
+      "url": "https://huggingface.co/bartowski/google_gemma-3-12b-it-GGUF/resolve/648e3a36a77c8a9f12d86e741f9dcb9089c769c4/google_gemma-3-12b-it-Q4_K_M.gguf?download=true",
+      "bytes": 7300575264,
+      "sha256": "fc57f67efa46d711c346e587cbef7d049e95f3df8db2eb2271153343ef0acc7b",
+      "license": "gemma",
+      "vramGb": 8,
+      "runtime": "llama-b11379-cuda12.4",
+      "checked": false
+    },
+    {
+      "id": "gemma3-4b",
+      "label": "Gemma 3 4B (Q4_K_M)",
+      "description": "Google. 작은 그래픽카드용",
+      "file": "local-lab/models/gemma3-4b/google_gemma-3-4b-it-Q4_K_M.gguf",
+      "url": "https://huggingface.co/bartowski/google_gemma-3-4b-it-GGUF/resolve/71506238f970075ca85125cd749c28b1b0eee84e/google_gemma-3-4b-it-Q4_K_M.gguf?download=true",
+      "bytes": 2489758112,
+      "sha256": "4996030242583a40aa151ff93f49ed787ac8c25e4120c3ae4588b2e2a7d1ae94",
+      "license": "gemma",
+      "vramGb": 4,
+      "runtime": "llama-b11379-cuda12.4",
+      "checked": false
+    },
+    {
+      "id": "phi4-mini",
+      "label": "Phi-4 mini (Q4_K_M)",
+      "description": "Microsoft. 3.8B, 작은 그래픽카드용",
+      "file": "local-lab/models/phi4-mini/microsoft_Phi-4-mini-instruct-Q4_K_M.gguf",
+      "url": "https://huggingface.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF/resolve/7ff82c2aaa4dde30121698a973765f39be5288c0/microsoft_Phi-4-mini-instruct-Q4_K_M.gguf?download=true",
+      "bytes": 2491874688,
+      "sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+      "license": "mit",
+      "vramGb": 4,
+      "runtime": "llama-b11379-cuda12.4",
+      "checked": false
+    },
+    {
+      "id": "deepseek-r1-qwen3-8b",
+      "label": "DeepSeek R1 0528 Qwen3 8B (Q4_K_M)",
+      "description": "DeepSeek. 추론형, 답이 길고 느림",
+      "file": "local-lab/models/deepseek-r1-qwen3-8b/deepseek-ai_DeepSeek-R1-0528-Qwen3-8B-Q4_K_M.gguf",
+      "url": "https://huggingface.co/bartowski/deepseek-ai_DeepSeek-R1-0528-Qwen3-8B-GGUF/resolve/75b8e3d4ecafa21b1f9a06209712f726d0ed77bc/deepseek-ai_DeepSeek-R1-0528-Qwen3-8B-Q4_K_M.gguf?download=true",
+      "bytes": 5027783040,
+      "sha256": "e0c2f118fd59f3a16f20d18b0e7f79e960c84bc8c66d94fd71a691e05151d54f",
+      "license": "mit",
+      "vramGb": 8,
+      "runtime": "llama-b11379-cuda12.4",
+      "checked": false
+    }
+  ]
+}

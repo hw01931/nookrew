@@ -1,0 +1,188 @@
+@import url('/styles/tokens.css');
+@import url('/styles/base.css');
+@import url('/styles/dialogs.css');
+@import url('/styles/office.css');
+@import url('/styles/change-diff.css');
+@import url('/styles/documents.css');
+@import url('/styles/pixel-office.css');
+.office-conversation {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+.conversation-hint {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+.conversation-toolbar,
+.office-conversation footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.conversation-messages {
+  height: min(48vh, 500px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.conversation-message {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  max-width: 94%;
+}
+.conversation-message[data-role='user'] {
+  align-self: flex-end;
+  background: var(--surface-raised, var(--surface));
+}
+.conversation-message strong {
+  font-size: 12px;
+  opacity: 0.65;
+}
+.conversation-message div {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.65;
+  margin-top: 8px;
+}
+.office-conversation textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  font: inherit;
+  padding: 14px;
+  border-radius: 12px;
+}
+body.office-companion #office-viewer.conversation-open[open] {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+#office-viewer.conversation-open .dialog-top {
+  flex-shrink: 0;
+}
+#office-viewer.conversation-open #office-viewer-content {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  padding: 20px 24px;
+}
+#office-viewer.conversation-open .office-conversation {
+  height: 100%;
+  gap: 12px;
+}
+#office-viewer.conversation-open .conversation-messages {
+  height: auto;
+  flex: 1;
+  min-height: 100px;
+}
+.office-conversation form {
+  flex-shrink: 0;
+}
+.conversation-message[data-role='assistant'] .conversation-body {
+  white-space: normal;
+}
+.conversation-body pre {
+  overflow: auto;
+  max-width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background: #edf1f4;
+}
+.conversation-body p {
+  margin: 0 0 12px;
+}
+.conversation-body p:last-child {
+  margin-bottom: 0;
+}
+.conversation-body ul,
+.conversation-body ol {
+  padding-left: 22px;
+}
+.office-conversation footer {
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+body.office-companion {
+  margin: 0;
+  min-width: 0;
+  background: var(--surface);
+}
+body.office-companion main {
+  padding: 0;
+  min-width: 0;
+}
+body.office-companion #office-content {
+  padding: 0;
+  min-width: 0;
+}
+body.office-companion #office-viewer {
+  max-width: calc(100vw - 32px);
+}
+body.office-companion #office-viewer.conversation-open {
+  margin: 12px 12px 12px auto;
+  width: min(650px, calc(100vw - 24px));
+  max-height: calc(100vh - 24px);
+  height: calc(100vh - 24px);
+  box-sizing: border-box;
+}
+body.office-companion #office-viewer.conversation-open::backdrop {
+  background: #20394525;
+}
+.office-decor svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+body.office-companion .office-workbench-content {
+  padding: 24px;
+}
+.office-companion #notice {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15000;
+  max-width: min(560px, 90vw);
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+.office-companion #notice[hidden] {
+  display: none;
+}
+.office-companion #notice.error {
+  color: var(--red);
+}
+.office-companion button:focus-visible,
+.office-companion a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.companion-recovery {
+  max-width: 480px;
+  margin: 80px auto;
+  padding: 24px;
+  text-align: center;
+}
+.office-companion .project-library-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.office-companion .office-workbench-panel {
+  max-width: min(680px, 100vw);
+}
+@media (max-width: 600px) {
+  body.office-companion .office-workbench-content {
+    padding: 16px;
+  }
+}

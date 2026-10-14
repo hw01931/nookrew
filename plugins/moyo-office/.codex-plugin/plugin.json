@@ -1,0 +1,34 @@
+{
+  "name": "moyo-office",
+  "version": "0.1.9",
+  "description": "A local office for existing Codex sessions, shared across your projects.",
+  "author": {
+    "name": "miscforge"
+  },
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "requires_local_executor": true,
+  "interface": {
+    "displayName": "Nookrew",
+    "shortDescription": "Your little AI office",
+    "longDescription": "Open a project office inside Codex. View real session activity, recent conversation and project documents, and send messages to the original Codex session. Windows x64 local runtime; Codex installation and ChatGPT login required.",
+    "developerName": "miscforge",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "logo": "./assets/icon.svg",
+    "composerIcon": "./assets/icon.svg",
+    "defaultPrompt": [
+      "Start the office for my current local folder.",
+      "현재 로컬 작업 폴더의 사무실을 열어줘."
+    ]
+  },
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/open-office/SKILL.md"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "miscforge",
+  "interface": {
+    "displayName": "Nookrew · miscforge"
+  },
+  "plugins": [
+    {
+      "name": "moyo-office",
+      "source": {
+        "source": "local",
+        "path": "./plugins/moyo-office"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

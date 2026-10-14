@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "moyo-office": {
+      "tool_timeout_sec": 60,
+      "cwd": ".",
+      "args": [
+        "--mcp"
+      ],
+      "startup_timeout_sec": 30,
+      "command": "./runtime/AIOrchestraOffice.exe"
+    }
+  }
+}

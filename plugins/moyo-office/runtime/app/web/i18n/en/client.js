@@ -1,0 +1,23 @@
+/** English text of the customer review page (ADR 0061). Same keys as ko/client.js. */
+export default {
+  'client.title': 'Client review',
+  'client.checking': 'Checking…',
+  'client.heading': 'Shared with you',
+  'client.intro': 'Artifacts and rooms shared with you.',
+  'client.feedback': 'Feedback',
+  'client.kind': 'Type',
+  'client.verdict.COMMENT': 'Comment only',
+  'client.verdict.ACCEPT': 'Accept',
+  'client.verdict.CHANGES': 'Request changes',
+  'client.sendFeedback': 'Send feedback',
+  'client.message': 'Message',
+  'client.sendMessage': 'Send message',
+  'client.empty': 'Nothing has been shared yet.',
+  'client.denied': 'No access',
+  'client.loadFailed': 'Could not load',
+  'client.cannotOpen': 'Cannot open the shared items',
+  'client.deniedHelp': 'The link is invalid or has expired. Ask the person who shared it.',
+  'client.failedHelp': 'Check your connection and the link, then try again.',
+  'client.sent': 'Sent.',
+  'client.sendFailed': 'Could not send. Try again. Error: {reason}',
+};

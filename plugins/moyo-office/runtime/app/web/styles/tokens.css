@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/fonts/PretendardVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  color-scheme: light;
+  --bg: #f7f8fa;
+  --surface: #fff;
+  /* Code and plain-text editors. Consolas has no Hangul; without a Korean fallback Windows draws
+     it in a wide substitute ("프 로 젝 트"). */
+  --font-mono: ui-monospace, Consolas, 'D2Coding', 'Malgun Gothic', monospace;
+  --sidebar: #f6f7f9;
+  --ink: #262933;
+  --muted: #707582;
+  --border: #e8e9ed;
+  --accent: #5264c7;
+  --accent-hover: #4052b2;
+  --accent-soft: #eef0fb;
+  --text-secondary: #626976;
+  --text-supporting: #626976;
+  --heading-secondary: #343a46;
+  --placeholder: #777d88;
+  --selection: #edf2f7;
+  --nav-selection: #eceef9;
+  --list-surface: #f7f8fa;
+  --note-surface: #f2f3f7;
+  --green: #35664b;
+  --amber: #95682b;
+  --red: #ae493c;
+  --shadow: 0 8px 28px #252a2508;
+  --font-ui: 'Pretendard', 'Segoe UI', 'Malgun Gothic', sans-serif;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --radius-control: 8px;
+  --radius-card: 10px;
+  --radius-bubble: 16px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-synthesis: none;
+}

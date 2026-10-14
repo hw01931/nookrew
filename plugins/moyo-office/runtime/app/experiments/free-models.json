@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "enabled": false,
+  "verified_at": "2026-10-04",
+  "preferred": "inclusionai/ling-3.0-flash-sante:free",
+  "models": [
+    "inclusionai/ling-3.0-flash-sante:free",
+    "dots-studio/dots-3-note-preview:free",
+    "qwen/qwen3.8-27b:free",
+    "apodex/apodex-1.1-mini:free",
+    "cohere/north-mini-code:free"
+  ],
+  "max_calls_per_run": 32,
+  "credential_reference": "secrets/openrouterkey.txt or OPENROUTER_API_KEY",
+  "local_fallback": false,
+  "paid_fallback": false,
+  "availability_observations": {
+    "inclusionai/ling-3.0-flash-sante:free": "CODING_BUNDLE_5_OF_5_3.60_SECONDS",
+    "dots-studio/dots-3-note-preview:free": "CODING_BUNDLE_5_OF_5_7.46_SECONDS",
+    "qwen/qwen3.8-27b:free": "CODING_BUNDLE_5_OF_5_24.06_SECONDS",
+    "apodex/apodex-1.1-mini:free": "CODING_BUNDLE_4_OF_5_6.39_SECONDS",
+    "cohere/north-mini-code:free": "CODING_BUNDLE_3_OF_5_31.96_SECONDS"
+  },
+  "selection_evidence": "local-lab/results/free-benchmark/20261004-152702-53f0c2f7",
+  "selection_scope": "provisional lab order from one small coding bundle, not a general ranking",
+  "excluded_at_check": {
+    "google/gemma-4-31b-it:free": "RATE_LIMITED_429",
+    "google/gemma-4-26b-a4b-it:free": "RATE_LIMITED_429",
+    "thinkingmachines/inkling-small:free": "HTTP_403",
+    "liquid/lfm-2.5-2.6b:free": "HTTP_404",
+    "nvidia/nemotron-3-ultra-550b-a55b:free": "HTTP_404",
+    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": "HTTP_404",
+    "nvidia/nemotron-3.5-content-safety:free": "HTTP_404",
+    "poolside/laguna-s-2.1:free": "HTTP_404",
+    "poolside/laguna-xs-2.1:free": "HTTP_404",
+    "thinkingmachines/inkling:free": "HTTP_403",
+    "nvidia/nemotron-3.5-lightning:free": "HTTP_404",
+    "nvidia/nemotron-3-super-120b-a12b:free": "HTTP_404"
+  }
+}
