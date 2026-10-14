@@ -8,7 +8,16 @@ AI에게 일을 맡겼는데, 기다리는 건 나였습니다. 채팅창만 보
 
 ## 설치 · Windows 무료 베타
 
-로컬 실행이 가능한 Codex 대화에 이 저장소 링크를 전달하고 Nookrew 설치를 요청하세요. 공식 CLI:
+**Codex에 아래 문장만 보내세요.** Windows의 로컬 실행이 가능한 Codex 대화에서 사용합니다.
+
+```text
+https://github.com/hw01931/nookrew
+이 저장소의 Nookrew 플러그인을 사용자 공용으로 설치하고, 지금 작업 폴더의 사무실을 열어줘. README의 공식 Codex 설치 명령을 사용하고 프로젝트마다 다시 설치하지 마.
+```
+
+Codex가 저장소 안내를 읽고 아래 두 공식 명령으로 설치할 수 있습니다. 설치 후 Nookrew를 선택해 `시작` 또는 `start`라고 입력하면 됩니다. 호스트가 설치·실행 승인을 요청하면 확인하세요. 안내를 읽은 것과 실행 성공은 다르므로 반환된 설치 결과와 사무실 URL을 확인합니다.
+
+직접 설치할 때의 공식 CLI:
 
 ```powershell
 codex plugin marketplace add https://github.com/hw01931/nookrew.git

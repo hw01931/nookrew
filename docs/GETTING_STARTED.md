@@ -8,7 +8,14 @@ Windows x64, 설치된 Codex, 기존 ChatGPT 로그인, 로컬 실행 도구가 
 
 ## 설치 및 시작
 
-검증한 배포 패키지를 풀고 Codex에 해당 marketplace 폴더를 설치해 달라고 요청합니다. 공식 CLI에서는 codex plugin marketplace add <배포 폴더의 절대경로> 후 codex plugin add moyo-office@moyo-local를 사용합니다. 공개 패키지의 identity가 달라질 경우 그 패키지 안내를 따릅니다. 별도 Node/npm 설치는 필요하지 않습니다.
+Windows의 로컬 Codex 대화에 아래 문장을 복사해서 보내세요. 별도 Node/npm 설치는 필요하지 않습니다.
+
+```text
+https://github.com/hw01931/nookrew
+이 저장소의 Nookrew 플러그인을 사용자 공용으로 설치하고, 지금 작업 폴더의 사무실을 열어줘. README의 공식 Codex 설치 명령을 사용하고 프로젝트마다 다시 설치하지 마.
+```
+
+Codex는 `codex plugin marketplace add https://github.com/hw01931/nookrew.git` 다음 `codex plugin add moyo-office@miscforge`로 설치할 수 있습니다. 설치·실행 승인이 나오면 호스트 안내를 확인하세요. 한 번 설치하면 다른 로컬 작업 폴더에서도 같은 플러그인을 사용합니다. 설치 성공과 실제 사무실 URL을 확인하며, 호스트에 따라 플러그인 목록 갱신이나 새 대화가 필요할 수 있습니다.
 
 플러그인 선택 메뉴에서 Nookrew를 선택하고 시작 또는 start라고 입력합니다. 실제 @멘션을 선택하세요. 텍스트만 쓰는 것이 플러그인 선택과 항상 같지는 않습니다. 최초 실행 권한 검토는 Codex 호스트 정책을 따릅니다.
 
