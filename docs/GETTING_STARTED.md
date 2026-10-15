@@ -4,7 +4,7 @@ AI에게 일을 맡기고 채팅창만 기다리는 시간이 심심해서, 함�
 
 ## 지원 환경
 
-Windows x64, 설치된 Codex, 기존 ChatGPT 로그인, 로컬 실행 도구가 있는 Codex 대화. 프로젝트 등록은 필수가 아니지만 선택한 로컬 작업 폴더는 필요합니다. ChatGPT 웹·로컬 실행 없는 일반 대화, macOS·Linux는 현재 지원 범위가 아닙니다.
+Windows x64 / macOS Apple Silicon·Intel / Linux ARM64·x64 베타 런타임, 설치된 Codex, 기존 ChatGPT 로그인, 로컬 실행 도구가 있는 Codex 대화. 프로젝트 등록은 필수가 아니지만 선택한 로컬 작업 폴더는 필요합니다. ChatGPT 웹·로컬 실행 없는 일반 대화는 지원하지 않습니다. 각 OS 런타임 시험은 실제 Codex Desktop 채팅/UI 수용과 별개입니다. 최초 실행은 인터넷에서 체크섬이 고정된 OS별 번들을 공용 사용자 캐시에 받으며 프로젝트마다 설치하지 않습니다.
 
 ## 설치 및 시작
 
@@ -15,7 +15,7 @@ https://github.com/hw01931/nookrew
 이 저장소의 Nookrew 플러그인을 사용자 공용으로 설치하고, 지금 작업 폴더의 사무실을 열어줘. README의 공식 Codex 설치 명령을 사용하고 프로젝트마다 다시 설치하지 마.
 ```
 
-Codex는 `codex plugin marketplace add https://github.com/hw01931/nookrew.git` 다음 `codex plugin add moyo-office@miscforge`로 설치할 수 있습니다. 설치·실행 승인이 나오면 호스트 안내를 확인하세요. 한 번 설치하면 다른 로컬 작업 폴더에서도 같은 플러그인을 사용합니다. 설치 성공과 실제 사무실 URL을 확인하며, 호스트에 따라 플러그인 목록 갱신이나 새 대화가 필요할 수 있습니다.
+Codex는 `codex plugin marketplace add https://github.com/hw01931/nookrew.git` 다음 `codex plugin add nookrew@miscforge`로 설치할 수 있습니다. 설치·실행 승인이 나오면 호스트 안내를 확인하세요. 한 번 설치하면 다른 로컬 작업 폴더에서도 같은 플러그인을 사용합니다. 설치 성공과 실제 사무실 URL을 확인하며, 호스트에 따라 플러그인 목록 갱신이나 새 대화가 필요할 수 있습니다.
 
 플러그인 선택 메뉴에서 Nookrew를 선택하고 시작 또는 start라고 입력합니다. 실제 @멘션을 선택하세요. 텍스트만 쓰는 것이 플러그인 선택과 항상 같지는 않습니다. 최초 실행 권한 검토는 Codex 호스트 정책을 따릅니다.
 

@@ -5,10 +5,10 @@
   },
   "plugins": [
     {
-      "name": "moyo-office",
+      "name": "nookrew",
       "source": {
         "source": "local",
-        "path": "./plugins/moyo-office"
+        "path": "./plugins/nookrew"
       },
       "policy": {
         "installation": "AVAILABLE",

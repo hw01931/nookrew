@@ -1,0 +1,21 @@
+{
+  "name": "nookrew",
+  "version": "0.2.0-beta.1",
+  "description": "Your little AI office for local Codex sessions.",
+  "author": {
+    "name": "miscforge"
+  },
+  "extensions": {
+    "com.openai": {
+      "requires_local_executor": true,
+      "interface": {
+        "displayName": "Nookrew",
+        "shortDescription": "Your little AI office",
+        "websiteURL": "https://hw01931.github.io/nookrew/",
+        "supportURL": "https://hw01931.github.io/nookrew/site/support.html",
+        "privacyPolicyURL": "https://hw01931.github.io/nookrew/site/privacy.html",
+        "termsOfServiceURL": "https://hw01931.github.io/nookrew/site/terms.html"
+      }
+    }
+  }
+}

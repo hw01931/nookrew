@@ -6,9 +6,9 @@ AI에게 일을 맡겼는데, 기다리는 건 나였습니다. 채팅창만 보
 
 ![Nookrew](media/02-office.png)
 
-## 설치 · Windows 무료 베타
+## 설치 · Windows / macOS / Linux 무료 베타
 
-**Codex에 아래 문장만 보내세요.** Windows의 로컬 실행이 가능한 Codex 대화에서 사용합니다.
+**Codex에 아래 문장만 보내세요.** 로컬 실행이 가능한 Codex 대화에서 사용합니다.
 
 ```text
 https://github.com/hw01931/nookrew
@@ -21,12 +21,12 @@ Codex가 저장소 안내를 읽고 아래 두 공식 명령으로 설치할 수
 
 ```powershell
 codex plugin marketplace add https://github.com/hw01931/nookrew.git
-codex plugin add moyo-office@miscforge
+codex plugin add nookrew@miscforge
 ```
 
 플러그인 선택에서 **Nookrew**를 고른 뒤 **시작** 또는 **start**라고 입력하세요. 한 번 설치하면 다른 로컬 작업 폴더에서도 사용합니다. 최초 실행 권한 검토는 호스트 정책을 따릅니다. 일반 텍스트 멘션과 실제 플러그인 선택은 다를 수 있습니다.
 
-프로젝트 등록은 필수가 아닙니다. 로컬 작업 폴더와 실행 도구는 필요합니다. ChatGPT 웹이나 로컬 실행이 없는 일반 대화에서는 시작할 수 없습니다. 현재 Windows x64용이며 Codex와 기존 ChatGPT 로그인을 사용합니다. 별도 Node/npm 설치는 필요하지 않습니다.
+프로젝트 등록은 필수가 아닙니다. 로컬 작업 폴더와 실행 도구는 필요합니다. ChatGPT 웹이나 로컬 실행이 없는 일반 대화에서는 시작할 수 없습니다. Windows x64, macOS Apple Silicon·Intel, Linux ARM64·x64용 베타 런타임을 제공합니다. OS별 런타임 시험과 실제 Codex Desktop 대화/UI 수용은 별개입니다. Codex 및 기존 로그인을 사용하며 별도 Node/npm·API 키는 필요하지 않습니다. 최초 실행에서 OS에 맞는 체크섬 고정 패키지를 사용자 캐시에 받습니다.
 
 ## 하는 일
 
@@ -38,6 +38,6 @@ codex plugin add moyo-office@miscforge
 
 [자세한 사용법](docs/GETTING_STARTED.md) · [지원과 알려진 한계](docs/SUPPORT.md) · [데이터 처리 설명](docs/DATA_HANDLING.md)
 
-이 저장소는 검토한 배포 패키지입니다. 기존 비공개 개발 저장소·세션·비밀키·모델 데이터는 포함하지 않습니다. 플러그인 기술 ID moyo-office는 기존 연결 호환을 위해 유지합니다. 공개 Git 배포와 OpenAI 공식 디렉터리 등록은 별개이며, 공식 디렉터리 심사 완료를 뜻하지 않습니다.
+이 저장소는 검토한 배포 패키지입니다. 기존 비공개 개발 저장소·세션·비밀키·모델 데이터는 포함하지 않습니다. 새 플러그인 패키지 ID는 nookrew입니다. 기존 moyo-office 설치와 프로젝트 기록은 자동 삭제하지 않습니다. 공개 Git 배포와 OpenAI 공식 디렉터리 등록은 별개이며, 공식 디렉터리 심사 완료를 뜻하지 않습니다.
 
 코드와 번들 파일의 이용 조건은 각 제공자의 라이선스를 따릅니다. 서드파티 라이선스는 plugins/moyo-office/runtime/licenses 및 runtime/app의 라이선스 파일에 있습니다. 별도 배포 서명·새 PC 수용은 아직 미완료입니다.

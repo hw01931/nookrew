@@ -36,3 +36,7 @@ jobs:
       - name: Verify packaged office without model calls
         shell: bash
         run: node scripts/verify-office-portable.cjs candidate/nookrew
+
+      - name: Verify Git install bootstrap and cached reopen
+        shell: bash
+        run: node scripts/verify-office-bootstrap.cjs plugins/nookrew
