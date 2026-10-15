@@ -17,6 +17,8 @@ https://github.com/hw01931/nookrew
 
 Codex가 저장소 안내를 읽고 아래 두 공식 명령으로 설치할 수 있습니다. 설치 후 Nookrew를 선택해 `시작` 또는 `start`라고 입력하면 됩니다. 호스트가 설치·실행 승인을 요청하면 확인하세요. 안내를 읽은 것과 실행 성공은 다르므로 반환된 설치 결과와 사무실 URL을 확인합니다.
 
+이미 miscforge를 등록한 사용자는 `codex plugin marketplace upgrade miscforge`로 목록을 갱신하세요.
+
 직접 설치할 때의 공식 CLI:
 
 ```powershell
