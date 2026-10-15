@@ -21,7 +21,17 @@ const args =
 let url;
 function launch() {
   const r = spawnSync(binary, args, {encoding: 'utf8', windowsHide: true, timeout: 180000, maxBuffer: 65536});
-  if (r.error || r.status !== 0) throw Error('BOOTSTRAP_FAILED:' + (r.error?.code || String(r.stderr).slice(-500)));
+  if (r.error || r.status !== 0) {
+    if (process.env.GITHUB_ACTIONS === 'true' && process.platform === 'win32') {
+      const reports=path.join(process.env.LOCALAPPDATA,'nookrew/0.2.0-beta.1/win32-x64/launch');
+      for(const name of fs.existsSync(reports)?fs.readdirSync(reports).filter(n=>n.endsWith('.json')):[]) {
+        const report=JSON.parse(fs.readFileSync(path.join(reports,name),'utf8'));
+        // This runner contains only generated empty test folders, never user sessions.
+        console.error(JSON.stringify({testProject:project,reportProject:report.project,reportHost:new URL(report.url).hostname}));
+      }
+    }
+    throw Error('BOOTSTRAP_FAILED:' + (r.error?.code || String(r.stderr).slice(-500)));
+  }
   const report = JSON.parse(r.stdout.trim().split('\n').at(-1));
   assert.equal(fs.realpathSync(report.project), fs.realpathSync(project));
   const u = new URL(report.url);
