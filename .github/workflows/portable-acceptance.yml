@@ -1,0 +1,38 @@
+name: Portable acceptance
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  packaged-runtime:
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: windows-2022
+            target: win32-x64
+          - runner: ubuntu-24.04
+            target: linux-x64
+          - runner: ubuntu-24.04-arm
+            target: linux-arm64
+          - runner: macos-15
+            target: darwin-arm64
+          - runner: macos-15-intel
+            target: darwin-x64
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Fetch exact candidate
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET: ${{ matrix.target }}
+        run: |
+          gh release download v0.2.0-beta.1 --repo hw01931/nookrew --pattern "Nookrew-0.2.0-beta.1-${TARGET}.tar.gz" --dir candidate
+          tar -xzf "candidate/Nookrew-0.2.0-beta.1-${TARGET}.tar.gz" -C candidate
+      - name: Verify packaged office without model calls
+        shell: bash
+        run: node scripts/verify-office-portable.cjs candidate/nookrew
