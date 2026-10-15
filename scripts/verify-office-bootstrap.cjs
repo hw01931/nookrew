@@ -5,7 +5,9 @@ const fs = require('node:fs'),
 const {spawnSync} = require('node:child_process'),
   {randomUUID} = require('node:crypto');
 const plugin = path.resolve(process.argv[2]);
-const project = fs.mkdtempSync(path.join(fs.realpathSync(os.tmpdir()), 'nookrew-bootstrap-'));
+const testRoot = fs.mkdtempSync(path.join(fs.realpathSync(os.tmpdir()), 'nookrew-bootstrap-'));
+const project = path.join(testRoot, '프로젝트 with spaces');
+fs.mkdirSync(project);
 const binary = process.platform === 'win32' ? 'powershell.exe' : '/bin/sh';
 const args =
   process.platform === 'win32'

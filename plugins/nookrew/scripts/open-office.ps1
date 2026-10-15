@@ -1,5 +1,7 @@
 param([Parameter(Mandatory=$true)][string]$Project)
 $ErrorActionPreference='Stop'
+[Console]::OutputEncoding=New-Object Text.UTF8Encoding($false)
+$OutputEncoding=[Console]::OutputEncoding
 $ProgressPreference='SilentlyContinue'
 if($env:PROCESSOR_ARCHITECTURE -notin @('AMD64','x86')){throw 'UNSUPPORTED_ARCH'}
 $cache=Join-Path $env:LOCALAPPDATA 'nookrew/0.2.0-beta.1/win32-x64'
