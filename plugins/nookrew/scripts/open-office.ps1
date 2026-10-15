@@ -33,5 +33,8 @@ for($attempt=0;$attempt -lt 300 -and -not(Test-Path -LiteralPath $report);$attem
 if(-not(Test-Path -LiteralPath $report)){throw 'OFFICE_START_TIMEOUT'}
 $result=Get-Content -LiteralPath $report -Raw -Encoding UTF8 | ConvertFrom-Json
 $uri=[Uri]$result.url
-if($result.project -ne [IO.Path]::GetFullPath($Project) -or $uri.Scheme -ne 'http' -or $uri.Host -notin @('127.0.0.1','[::1]','::1','[0000:0000:0000:0000:0000:0000:0000:0001]')){throw 'OFFICE_REPORT_INVALID'}
+if($result.project -ne [IO.Path]::GetFullPath($Project)){throw 'OFFICE_REPORT_PROJECT_MISMATCH'}
+$address=[Net.IPAddress]::None
+if(-not [Net.IPAddress]::TryParse($uri.Host.Trim([char[]]'[]'),[ref]$address)){throw 'OFFICE_REPORT_INVALID_HOST'}
+if($uri.Scheme -ne 'http' -or $address.ToString() -notin @('127.0.0.1','::1')){throw 'OFFICE_REPORT_INVALID_LOOPBACK'}
 $result | ConvertTo-Json -Compress
