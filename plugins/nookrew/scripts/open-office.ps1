@@ -18,5 +18,22 @@ if(-not(Test-Path -LiteralPath $binary)){
  & $nativeTar -xzf $archive -C $cache
  if($LASTEXITCODE -ne 0){throw 'ARCHIVE_EXTRACTION_FAILED'}
 }
-& $binary (Join-Path $cache 'nookrew/scripts/open-office.cjs') $Project
-if($LASTEXITCODE -ne 0){throw 'OFFICE_START_FAILED'}
+if($Project.Contains([char]34)){throw 'PROJECT_PATH_DENIED'}
+$launch=Join-Path $cache 'launch'
+New-Item -ItemType Directory -Force -Path $launch | Out-Null
+$key=[Guid]::NewGuid().ToString()
+$report=Join-Path $launch ($key+'.json')
+$outLog=Join-Path $launch ($key+'.log')
+$errLog=Join-Path $launch ($key+'.error.log')
+$launcher=Join-Path $cache 'nookrew/runtime/office-launcher.cjs'
+$arguments='"'+$launcher+'" --project "'+$Project+'" --no-open --report-file "'+$report+'"'
+$process=Start-Process -FilePath $binary -ArgumentList $arguments -WindowStyle Hidden -RedirectStandardOutput $outLog -RedirectStandardError $errLog -PassThru
+for($attempt=0;$attempt -lt 300 -and -not(Test-Path -LiteralPath $report);$attempt++){
+ if($process.HasExited -and -not(Test-Path -LiteralPath $report)){throw 'OFFICE_START_FAILED'}
+ Start-Sleep -Milliseconds 100
+}
+if(-not(Test-Path -LiteralPath $report)){throw 'OFFICE_START_TIMEOUT'}
+$result=Get-Content -LiteralPath $report -Raw -Encoding UTF8 | ConvertFrom-Json
+$uri=[Uri]$result.url
+if($result.project -ne [IO.Path]::GetFullPath($Project) -or $uri.Scheme -ne 'http' -or $uri.Host -notin @('127.0.0.1','[::1]','::1','[0000:0000:0000:0000:0000:0000:0000:0001]')){throw 'OFFICE_REPORT_INVALID'}
+$result | ConvertTo-Json -Compress
