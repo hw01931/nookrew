@@ -23,11 +23,9 @@ $launch=Join-Path $cache 'launch'
 New-Item -ItemType Directory -Force -Path $launch | Out-Null
 $key=[Guid]::NewGuid().ToString()
 $report=Join-Path $launch ($key+'.json')
-$outLog=Join-Path $launch ($key+'.log')
-$errLog=Join-Path $launch ($key+'.error.log')
 $launcher=Join-Path $cache 'nookrew/runtime/office-launcher.cjs'
 $arguments='"'+$launcher+'" --project "'+$Project+'" --no-open --report-file "'+$report+'"'
-$process=Start-Process -FilePath $binary -ArgumentList $arguments -WindowStyle Hidden -RedirectStandardOutput $outLog -RedirectStandardError $errLog -PassThru
+$process=Start-Process -FilePath $binary -ArgumentList $arguments -WindowStyle Hidden -PassThru
 for($attempt=0;$attempt -lt 300 -and -not(Test-Path -LiteralPath $report);$attempt++){
  if($process.HasExited -and -not(Test-Path -LiteralPath $report)){throw 'OFFICE_START_FAILED'}
  Start-Sleep -Milliseconds 100
