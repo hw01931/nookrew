@@ -23,7 +23,7 @@ function launch() {
   const r = spawnSync(binary, args, {encoding: 'utf8', windowsHide: true, timeout: 180000, maxBuffer: 65536});
   if (r.error || r.status !== 0) throw Error('BOOTSTRAP_FAILED:' + (r.error?.code || String(r.stderr).slice(-500)));
   const report = JSON.parse(r.stdout.trim().split('\n').at(-1));
-  assert.equal(report.project, project);
+  assert.equal(fs.realpathSync(report.project), fs.realpathSync(project));
   const u = new URL(report.url);
   assert.equal(u.protocol, 'http:');
   assert.ok(['127.0.0.1', '[::1]'].includes(u.hostname));
@@ -47,7 +47,7 @@ function launch() {
     if (url) {
       const origin = new URL(url).origin;
       const office = await (await fetch(origin + '/api/office')).json();
-      assert.equal(office.projectRoot, project);
+      assert.equal(fs.realpathSync(office.projectRoot), fs.realpathSync(project));
       const state = await (await fetch(origin + '/api/state')).json();
       const r = await fetch(origin + '/api/office/companion-stop', {
         method: 'POST',

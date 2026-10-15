@@ -19,6 +19,10 @@ if(-not(Test-Path -LiteralPath $binary)){
  if($LASTEXITCODE -ne 0){throw 'ARCHIVE_EXTRACTION_FAILED'}
 }
 if($Project.Contains([char]34)){throw 'PROJECT_PATH_DENIED'}
+$pathModule=Join-Path $cache 'nookrew/runtime/app/dist/src/infrastructure/local-path.js'
+$canonical=& $binary -e 'const {localDirectory}=require(process.argv[1]); console.log(localDirectory(process.argv[2]));' $pathModule $Project
+if($LASTEXITCODE -ne 0 -or -not $canonical){throw 'PROJECT_PATH_DENIED'}
+$Project=$canonical.Trim()
 $launch=Join-Path $cache 'launch'
 New-Item -ItemType Directory -Force -Path $launch | Out-Null
 $key=[Guid]::NewGuid().ToString()
