@@ -8,12 +8,14 @@ Windows x64 / macOS Apple Silicon·Intel / Linux ARM64·x64 베타 런타임, �
 
 ## 설치 및 시작
 
-Windows의 로컬 Codex 대화에 아래 문장을 복사해서 보내세요. 별도 Node/npm 설치는 필요하지 않습니다.
+로컬 실행 가능한 Codex 대화에 아래 문장을 복사해서 보내세요. 별도 Node/npm 설치는 필요하지 않습니다.
 
 ```text
 https://github.com/hw01931/nookrew
 이 저장소의 Nookrew 플러그인을 사용자 공용으로 설치하고, 지금 작업 폴더의 사무실을 열어줘. README의 공식 Codex 설치 명령을 사용하고 프로젝트마다 다시 설치하지 마.
 ```
+
+이미 miscforge를 등록했다면 먼저 `codex plugin marketplace upgrade miscforge`로 목록을 갱신합니다.
 
 Codex는 `codex plugin marketplace add https://github.com/hw01931/nookrew.git` 다음 `codex plugin add nookrew@miscforge`로 설치할 수 있습니다. 설치·실행 승인이 나오면 호스트 안내를 확인하세요. 한 번 설치하면 다른 로컬 작업 폴더에서도 같은 플러그인을 사용합니다. 설치 성공과 실제 사무실 URL을 확인하며, 호스트에 따라 플러그인 목록 갱신이나 새 대화가 필요할 수 있습니다.
 
