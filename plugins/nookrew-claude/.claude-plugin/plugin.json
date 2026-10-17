@@ -1,0 +1,15 @@
+{
+  "name": "nookrew",
+  "version": "0.2.0-beta.2",
+  "description": "Your little AI office: Claude Code and Codex sessions of a folder as small staff.",
+  "author": {
+    "name": "miscforge"
+  },
+  "homepage": "https://hw01931.github.io/nookrew/",
+  "repository": "https://github.com/hw01931/nookrew",
+  "keywords": [
+    "office",
+    "sessions",
+    "dashboard"
+  ]
+}

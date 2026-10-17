@@ -30,9 +30,20 @@ codex plugin add nookrew@miscforge
 
 프로젝트 등록은 필수가 아닙니다. 로컬 작업 폴더와 실행 도구는 필요합니다. ChatGPT 웹이나 로컬 실행이 없는 일반 대화에서는 시작할 수 없습니다. Windows x64, macOS Apple Silicon·Intel, Linux ARM64·x64용 베타 런타임을 제공합니다. OS별 런타임 시험과 실제 Codex Desktop 대화/UI 수용은 별개입니다. Codex 및 기존 로그인을 사용하며 별도 Node/npm·API 키는 필요하지 않습니다. 최초 실행에서 OS에 맞는 체크섬 고정 패키지를 사용자 캐시에 받습니다.
 
-## Claude Code도 함께
+## Claude Code에서 설치
 
-같은 프로젝트 폴더에서 Claude Code를 쓰면 별도 설치 없이 사무실에 직원으로 나타납니다. 실행 기록(`~/.claude/projects`)을 읽어 상태·서브에이전트(조수 1, 2, 3)·토큰을 보여 주고, 캐릭터를 누르면 대화를 읽습니다. 쉬는 Claude 세션에는 공식 CLI로 메시지를 보낼 수 있지만, Claude Code에서 열려 있는 세션은 Codex와 달리 접수할 공식 경로가 없어 읽기 전용입니다. 실제 Claude 메시지 전송은 아직 실제 계정으로 검증하지 않았습니다(NOT_RUN).
+Claude Code만 쓰셔도 됩니다. Claude Code에서 아래 두 줄을 입력하세요.
+
+```text
+/plugin marketplace add hw01931/nookrew
+/plugin install nookrew@miscforge
+```
+
+설치한 뒤 **"누크루 사무실 열어줘"** 라고 하거나 `/nookrew:open-office`를 실행하면 현재 작업 폴더의 사무실 주소(127.0.0.1)를 알려 줍니다. Claude Code에는 내장 브라우저가 없으니 그 주소를 직접 브라우저에서 여세요. 같은 폴더의 Claude Code·Codex 세션이 한 사무실에 직원으로 나타납니다.
+
+- 실행 기록(`~/.claude/projects`)을 읽어 상태·서브에이전트(조수 1, 2, 3)·토큰을 보여 주고, 캐릭터를 누르면 대화를 읽습니다.
+- 쉬는 Claude 세션에는 공식 CLI로 메시지를 보낼 수 있지만, Claude Code에서 열려 있는 세션은 읽기 전용입니다(Codex와 달리 접수할 공식 경로가 없습니다).
+- 실제 Claude 메시지 전송과, Claude Code가 이 스킬을 따라 사무실을 여는 대화는 아직 실제 계정으로 검증하지 않았습니다(NOT_RUN). 설치, 매니페스트 검증, 설치된 스크립트의 실제 실행은 확인했습니다.
 
 ## 하는 일
 
