@@ -31,8 +31,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TARGET: ${{ matrix.target }}
         run: |
-          gh release download v0.2.0-beta.1 --repo hw01931/nookrew --pattern "Nookrew-0.2.0-beta.1-${TARGET}.tar.gz" --dir candidate
-          tar -xzf "candidate/Nookrew-0.2.0-beta.1-${TARGET}.tar.gz" -C candidate
+          gh release download v0.2.0-beta.2 --repo hw01931/nookrew --pattern "Nookrew-0.2.0-beta.2-${TARGET}.tar.gz" --dir candidate
+          tar -xzf "candidate/Nookrew-0.2.0-beta.2-${TARGET}.tar.gz" -C candidate
       - name: Verify packaged office without model calls
         shell: bash
         run: node scripts/verify-office-portable.cjs candidate/nookrew
