@@ -32,14 +32,16 @@ codex plugin add nookrew@miscforge
 
 ## Claude Code에서 설치
 
-Claude Code만 쓰셔도 됩니다. Claude Code에서 아래 두 줄을 입력하세요.
+Claude Code만 쓰셔도 됩니다. **터미널**에서 아래 두 줄을 실행하세요. Claude 앱의 코드 탭에서는 `/plugin` 화면이 열리지 않으니 터미널이 확실합니다. 터미널의 클로드 코드 안에서는 `/plugin marketplace add hw01931/nookrew`, `/plugin install nookrew@miscforge`로도 됩니다.
 
-```text
-/plugin marketplace add hw01931/nookrew
-/plugin install nookrew@miscforge
+```bash
+claude plugin marketplace add hw01931/nookrew
+claude plugin install nookrew@miscforge
 ```
 
-설치한 뒤 **"누크루 사무실 열어줘"** 라고 하거나 `/nookrew:open-office`를 실행하면 현재 작업 폴더의 사무실 주소(127.0.0.1)를 알려 줍니다. Claude Code에는 내장 브라우저가 없으니 그 주소를 직접 브라우저에서 여세요. 같은 폴더의 Claude Code·Codex 세션이 한 사무실에 직원으로 나타납니다.
+설치한 뒤 앱이나 터미널을 한 번 다시 켜세요.
+
+설치한 뒤 **"누크루 사무실 열어줘"** 라고 하거나 `/nookrew:open-office`를 실행하면 현재 작업 폴더의 사무실 주소(127.0.0.1)를 알려 줍니다. Claude Code에는 내장 브라우저가 없으니 그 주소를 직접 브라우저에서 여세요. Codex 플러그인도 설치했다면 어느 쪽에서 열어도 같은 폴더의 Claude Code·Codex 세션이 한 사무실에 직원으로 나타납니다.
 
 - 실행 기록(`~/.claude/projects`)을 읽어 상태·서브에이전트(조수 1, 2, 3)·토큰을 보여 주고, 캐릭터를 누르면 대화를 읽습니다.
 - 쉬는 Claude 세션에는 공식 CLI로 메시지를 보낼 수 있지만, Claude Code에서 열려 있는 세션은 읽기 전용입니다(Codex와 달리 접수할 공식 경로가 없습니다).
