@@ -15,6 +15,10 @@ permissions:
   contents: read
 jobs:
   packaged-runtime:
+    # Temporary candidate validation only: draft assets require a push-capable token.
+    # Remove this job override before updating the default installation branch.
+    permissions:
+      contents: write
     timeout-minutes: 10
     strategy:
       fail-fast: false
