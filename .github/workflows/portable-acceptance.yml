@@ -1,6 +1,16 @@
 name: Portable acceptance
 on:
   workflow_dispatch:
+    inputs:
+      release_id:
+        description: Exact draft or published release ID
+        required: true
+      version:
+        description: Exact candidate version
+        required: true
+      verify_bootstrap:
+        description: Verify public download bootstrap after publication
+        default: 'false'
 permissions:
   contents: read
 jobs:
@@ -25,18 +35,25 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Fetch exact candidate
+      - name: Fetch exact candidate and verify pinned SHA256
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
           TARGET: ${{ matrix.target }}
+          VERSION: ${{ inputs.version }}
+          RELEASE_ID: ${{ inputs.release_id }}
         run: |
-          gh release download v0.2.0-beta.2 --repo hw01931/nookrew --pattern "Nookrew-0.2.0-beta.2-${TARGET}.tar.gz" --dir candidate
-          tar -xzf "candidate/Nookrew-0.2.0-beta.2-${TARGET}.tar.gz" -C candidate
+          mkdir candidate
+          ASSET="Nookrew-${VERSION}-${TARGET}.tar.gz"
+          ID=$(gh api "repos/hw01931/nookrew/releases/${RELEASE_ID}/assets" --jq ".[] | select(.name == \"${ASSET}\") | .id")
+          test -n "$ID"
+          gh api -H 'Accept: application/octet-stream' "repos/hw01931/nookrew/releases/assets/${ID}" > "candidate/${ASSET}"
+          node scripts/verify-candidate-archive.cjs "candidate/${ASSET}" "$TARGET"
+          tar -xzf "candidate/${ASSET}" -C candidate
       - name: Verify packaged office without model calls
         shell: bash
         run: node scripts/verify-office-portable.cjs candidate/nookrew
-
       - name: Verify Git install bootstrap and cached reopen
+        if: inputs.verify_bootstrap == 'true'
         shell: bash
         run: node scripts/verify-office-bootstrap.cjs plugins/nookrew

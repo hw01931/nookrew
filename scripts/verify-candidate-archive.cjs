@@ -1,0 +1,10 @@
+const fs = require('node:fs');
+const {createHash} = require('node:crypto');
+const path = require('node:path');
+const [file, target] = process.argv.slice(2);
+const records = JSON.parse(fs.readFileSync(path.join(__dirname, '../plugins/nookrew/runtime-archives.json')));
+const record = records.find(r => r.target === target);
+if (!record || path.basename(file) !== record.file) throw Error('CANDIDATE_TARGET_MISMATCH');
+const bytes = fs.readFileSync(file);
+if (bytes.length !== record.bytes || createHash('sha256').update(bytes).digest('hex') !== record.sha256) throw Error('CANDIDATE_CHECKSUM_MISMATCH');
+console.log('PASS pinned candidate archive: ' + target);

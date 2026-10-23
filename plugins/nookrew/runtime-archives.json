@@ -1,32 +1,32 @@
 [
   {
-    "file": "Nookrew-0.2.0-beta.2-darwin-arm64.tar.gz",
+    "file": "Nookrew-0.2.0-beta.3-darwin-arm64.tar.gz",
     "target": "darwin-arm64",
-    "sha256": "99eef3b9864ec85e65fda8ede093e5c60adab38644d540a889cb1eb2dd1b7a78",
-    "bytes": 43709806
+    "sha256": "5d264b1313ffdf9226ee17d47b19c14a873e1ab914ec1e75dd242d49f0f8b193",
+    "bytes": 43863592
   },
   {
-    "file": "Nookrew-0.2.0-beta.2-darwin-x64.tar.gz",
+    "file": "Nookrew-0.2.0-beta.3-darwin-x64.tar.gz",
     "target": "darwin-x64",
-    "sha256": "8aaf05d517fab22b4c09f88d336ec35f0442f773d336e7f7a08dd3550985ddfa",
-    "bytes": 45373064
+    "sha256": "4b7469c37c8c321fbf3d03cc6a1e5883d3c2592f099066aca091db52a5b9be2c",
+    "bytes": 45525361
   },
   {
-    "file": "Nookrew-0.2.0-beta.2-linux-arm64.tar.gz",
+    "file": "Nookrew-0.2.0-beta.3-linux-arm64.tar.gz",
     "target": "linux-arm64",
-    "sha256": "d58c66bddd883a64aa10782aacb273d7dd831e1c07e6b581924c36ecb75f437a",
-    "bytes": 50145052
+    "sha256": "f39725100f93745e869f715f3e253e5b77f38532345d5f68ad1d8c07bcc17163",
+    "bytes": 50290946
   },
   {
-    "file": "Nookrew-0.2.0-beta.2-linux-x64.tar.gz",
+    "file": "Nookrew-0.2.0-beta.3-linux-x64.tar.gz",
     "target": "linux-x64",
-    "sha256": "6041ab68a2a6e4f3f1f729e2677a4028e83d87fd45cbd9f58a539bb0335e6988",
-    "bytes": 50720185
+    "sha256": "b6114eee6e1332bcfddec475ab25af8b63416a4333486ac3d829749c28e44df6",
+    "bytes": 50867583
   },
   {
-    "file": "Nookrew-0.2.0-beta.2-win32-x64.tar.gz",
+    "file": "Nookrew-0.2.0-beta.3-win32-x64.tar.gz",
     "target": "win32-x64",
-    "sha256": "5e3037c886103c0213fc67a96069eaba345f7c3ec88c0252247ab8730327ce57",
-    "bytes": 40583893
+    "sha256": "b68c881565032ea4a4977b498d4cc381ce9f394c66b19bebd18e3c7551a7df57",
+    "bytes": 40735257
   }
 ]

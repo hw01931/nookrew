@@ -11,7 +11,7 @@
       "name": "nookrew",
       "source": "./plugins/nookrew-claude",
       "description": "Claude Code and Codex sessions as small staff in a little office.",
-      "version": "0.2.0-beta.2",
+      "version": "0.2.0-beta.3",
       "category": "productivity"
     }
   ]
